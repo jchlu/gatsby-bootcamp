@@ -5,6 +5,10 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    title: 'éxito.tech',
+    author: 'Johnny C-L'
+  },
   plugins: [
     'gatsby-plugin-sass'
   ]
