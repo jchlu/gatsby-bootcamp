@@ -1,0 +1,22 @@
+$linkColor: #999999;
+$hoverColor: #666666;
+$activeLinkColor: #333333;
+
+.nav-item {
+    color: $linkColor;
+    font-size: .9rem;
+    margin-right: 1.3rem;
+    text-decoration: none;
+}
+.nav-item:hover {
+    color: $hoverColor;
+}
+.active-nav-item {
+    color: $activeLinkColor;
+}
+
+.nav-list {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+}
