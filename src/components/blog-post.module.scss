@@ -1,0 +1,9 @@
+@import '../styles/_variables';
+
+.nav-item {
+    color: #000000;
+    text-decoration: none;
+}
+.nav-item:hover {
+    color: $hoverColor;
+}

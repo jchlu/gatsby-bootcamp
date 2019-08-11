@@ -9,6 +9,9 @@ export default _ => {
     allMarkdownRemark {
       edges {
         node {
+          fields {
+            slug
+          }
           frontmatter {
             date
             title
@@ -24,7 +27,7 @@ export default _ => {
     <Layout>
       <h1>Blog Posts</h1>
       <ol>
-        {posts.map(post => <BlogPost key={post.title} post={post} />)}
+        {posts.map(post => <BlogPost key={post.node.fields.slug} post={post} />)}
       </ol>
     </Layout>
   )

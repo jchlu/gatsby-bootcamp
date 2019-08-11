@@ -1,6 +1,4 @@
-$linkColor: #999999;
-$hoverColor: #666666;
-$activeLinkColor: #333333;
+@import '../styles/_variables';
 
 .nav-item {
     color: $linkColor;
