@@ -1,9 +1,18 @@
 @import '../styles/_variables';
 
 .nav-item {
+    background-color: #f4f4f4;
+    display: block;
+    list-style-type: none;
+}
+
+.nav-item-link {
     color: #000000;
+    display: block;
+    margin: 1rem 0;
     text-decoration: none;
 }
-.nav-item:hover {
+
+.nav-item-link:hover {
     color: $hoverColor;
 }

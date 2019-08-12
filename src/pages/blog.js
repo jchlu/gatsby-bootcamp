@@ -2,6 +2,7 @@ import React from "react"
 import Layout from '../components/layout'
 import { graphql, useStaticQuery } from 'gatsby'
 import BlogPost from '../components/blog-post'
+import blogStyles from './blog.module.scss'
 
 export default _ => {
   const data = useStaticQuery(graphql`

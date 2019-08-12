@@ -4,10 +4,10 @@ import blogPostStyles from './blog-post.module.scss'
 
 export default ({ post }) => {
   return (
-    <li>
+    <li className={blogPostStyles.navItem}>
       <h2>
         <Link
-          className={blogPostStyles.navItem}
+          className={blogPostStyles.navItemLink}
           key={post.node.fields.slug}
           to={`/blog/${post.node.fields.slug}`}
         >
