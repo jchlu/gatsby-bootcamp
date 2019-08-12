@@ -27,7 +27,7 @@ export default _ => {
   return (
     <Layout>
       <h1>Blog Posts</h1>
-      <ol>
+      <ol className={blogStyles.ol}>
         {posts.map(post => <BlogPost key={post.node.fields.slug} post={post} />)}
       </ol>
     </Layout>

@@ -5,18 +5,16 @@ import blogPostStyles from './blog-post.module.scss'
 export default ({ post }) => {
   return (
     <li className={blogPostStyles.navItem}>
+      <Link
+      className={blogPostStyles.navItemLink}
+      key={post.node.fields.slug}
+      to={`/blog/${post.node.fields.slug}`}
+      >
       <h2>
-        <Link
-          className={blogPostStyles.navItemLink}
-          key={post.node.fields.slug}
-          to={`/blog/${post.node.fields.slug}`}
-        >
-          {post.node.frontmatter.title}
-        </Link>
-      </h2>
-      <p>
-        {post.node.frontmatter.date}
-      </p>
-    </li>
+        {post.node.frontmatter.title}
+        </h2>
+        <p> {post.node.frontmatter.date} </p>
+      </Link>
+    </li >
   )
 }
