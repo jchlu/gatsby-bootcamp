@@ -6,14 +6,14 @@ export default ({ post }) => {
   return (
     <li className={blogPostStyles.navItem}>
       <Link
-      className={blogPostStyles.navItemLink}
-      key={post.node.fields.slug}
-      to={`/blog/${post.node.fields.slug}`}
+        className={blogPostStyles.navItemLink}
+        key={post.slug}
+        to={`/blog/${post.slug}`}
       >
-      <h2>
-        {post.node.frontmatter.title}
+        <h2>
+          {post.title}
         </h2>
-        <p> {post.node.frontmatter.date} </p>
+        <p> {post.date} </p>
       </Link>
     </li >
   )
