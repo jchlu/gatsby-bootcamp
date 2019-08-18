@@ -12,6 +12,7 @@ query ($slug: String!) {
     html
   }
 }`
+
 export default ({ data }) => {
   return (
     <Layout>

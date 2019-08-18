@@ -13,7 +13,7 @@ export default _ => {
             slug
           }
           frontmatter {
-            date
+            date(formatString: "MMMM Do, YYYY")
             title
           }
           html

@@ -10,14 +10,7 @@ export default _ => {
       edges {
         node {
           title
-          publishedDate
-          body {
-            content {
-              content {
-                value
-              }
-            }
-          }
+          publishedDate(formatString: "MMMM Do, YYYY")
           slug
         }
       }

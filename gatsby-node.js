@@ -15,10 +15,34 @@ exports.onCreateNode = ({ node, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const blogPostTemplate = path.resolve(`./src/templates/blog-post.js`)
-  const response = await graphql(`
-  query {
-    allMarkdownRemark {
+  const contentfulBlogPostTemplate = path.resolve(`./src/templates/contentful-blog-post.js`)
+  const markdownBlogPostTemplate = path.resolve(`./src/templates/markdown-blog-post.js`)
+  const contentfulResponse = await graphql(`
+  query GetAllContentfulBlogPost {
+    allContentfulBlogPost(sort: {order: DESC, fields: publishedDate}) {
+      edges {
+        node {
+          publishedDate(formatString: "MMMM Do, YYYY")
+          slug
+          title
+        }
+      }
+    }
+  }
+  `)
+  contentfulResponse.data.allContentfulBlogPost.edges.forEach(edge => {
+    createPage({
+      component: contentfulBlogPostTemplate,
+      path: `/blog/${edge.node.slug}`,
+      context: {
+        slug: edge.node.slug
+      }
+    })
+  })
+
+  const markdownResponse = await graphql(`
+  query GetAllMarkdown {
+    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
       edges {
         node {
           fields {
@@ -29,9 +53,9 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   }
   `)
-  response.data.allMarkdownRemark.edges.forEach(edge => {
+  markdownResponse.data.allMarkdownRemark.edges.forEach(edge => {
     createPage({
-      component: blogPostTemplate,
+      component: markdownBlogPostTemplate,
       path: `/blog/${edge.node.fields.slug}`,
       context: {
         slug: edge.node.fields.slug
