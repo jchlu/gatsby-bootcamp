@@ -1,8 +1,10 @@
 import React from "react"
 import { Link } from 'gatsby'
 import Layout from '../components/layout'
+import Head from '../components/head'
 
 export default _ => <Layout>
+  <Head title='about' />
   <h1>About jchlu</h1>
   <p>I'm a full-stack web developer specialising in PHP / MySQL, React / Redux, Gatsby & NodeJS</p>
   <p>Currently based in Las Terrenas on the beautiful North coast of The Dominican Republic</p>
